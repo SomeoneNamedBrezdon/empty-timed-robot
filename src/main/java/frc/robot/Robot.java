@@ -20,7 +20,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends TimedRobot {
 
  Joystick testJoystick;
- 
+
  
  
   /**
@@ -45,8 +45,29 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
-    boolean Button = testJoystick.getRawButton(1);
-    SmartDashboard.putBoolean("Button Pressed", Button);
+     boolean Button = testJoystick.getRawButton(1);
+    SmartDashboard.putBoolean("Jordan 5", Button);
+  
+    boolean pressed = testJoystick.getRawButtonPressed(1);
+    SmartDashboard.putBoolean("Yurrrr", pressed);
+
+    boolean released = testJoystick.getRawButtonReleased(1);
+    SmartDashboard.putBoolean("Frrrrr", released);
+
+    boolean otherButton = testJoystick.getRawButton(2);
+    boolean otherPressed = testJoystick.getRawButtonPressed(2);
+    boolean otherReleased = testJoystick.getRawButtonReleased(2);
+    SmartDashboard.putBoolean("other Jordan 5", otherButton);
+    SmartDashboard.putBoolean("other Yurrrr", otherPressed);
+    SmartDashboard.putBoolean("other Frrrrr", otherReleased);
+
+
+    double axis0 = testJoystick.getRawAxis(0);
+    SmartDashboard.putNumber("Axis 0", axis0);
+
+    int pov = testJoystick.getPOV();
+    SmartDashboard.putNumber("POV", pov);
+    
   }
 
   /** This function is called once when autonomous is enabled. */
